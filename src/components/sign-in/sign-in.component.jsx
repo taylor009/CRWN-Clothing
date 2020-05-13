@@ -18,7 +18,8 @@ import {
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     const [userCredentials, setCredentials] = useState({email: '', password: ''});
     const { email, password } = userCredentials;
-   const handleSubmit = async event => {
+
+    const handleSubmit = async event => {
         event.preventDefault();
         emailSignInStart(email, password);
     };
@@ -67,8 +68,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
 const mapDispatchToProps = dispatch => ({
     googleSignInStart: () => dispatch(googleSignInStart()),
-    emailSignInStart: (email, password) =>
-      dispatch(emailSignInStart({ email, password }))
+    emailSignInStart: (email, password) => dispatch(emailSignInStart({ email, password }))
 });
 
 export default connect(
