@@ -12,7 +12,7 @@ import CheckoutPage from './pages/checkout/checkout.component';
 
 import Header from './components/header/header.component';
 
-import { selectCurrentUser } from './redux/user/user.selector';
+import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 
 const App = ({ checkUserSession, currentUser }) => {
@@ -30,7 +30,9 @@ const App = ({ checkUserSession, currentUser }) => {
         <Route
           exact
           path='/signin'
-          render={() => currentUser ? (<Redirect to='/'/>) : (<SignInAndSignUpPage/>)}
+          render={() =>
+            currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage />
+          }
         />
       </Switch>
     </div>
