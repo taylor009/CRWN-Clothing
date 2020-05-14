@@ -35,7 +35,7 @@ app.post('/payment', (req, res) => {
 		source: req.body.token.id,
 		amount: req.body.amount,
 		currency: 'usd'
-	}
+	};
 
 	stripe.charges.create(body, (stripeErr, stripeRes) => {
 		if (stripeErr) {
